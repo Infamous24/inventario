@@ -74,7 +74,7 @@ class productoController extends Controller
 {
     $producto = Producto::withTrashed ()->find($id);
     $producto->forceDelete();//usamos el metodo delete para eliminar elobjeto
-return redirect()->Route('producto.principal');//redireccionamos a lavista index
+return redirect()->Route('categoria.principal');//redireccionamos a lavista index
 }
 
 
@@ -82,14 +82,14 @@ public function desactivaproducto($id)
 {
     $producto = Producto::find($id);
     $producto->Delete();//usamos el metodo delete para eliminar elobjeto
-return redirect()->Route('producto.principal');//redireccionamos a lavista index
+return redirect()->Route('categoria.principal');//redireccionamos a lavista index
 }
 
 public function activaproducto($id)
 {
     $producto = Producto::withTrashed ()->find($id);
     $producto->Restore($id);//usamos el metodo delete para eliminar elobjeto
-return redirect()->Route('producto.principal');//redireccionamos a lavista index
+return redirect()->Route('categoria.principal');//redireccionamos a lavista index
 }
 
 }

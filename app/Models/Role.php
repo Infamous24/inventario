@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Role extends Model
 {
     use HasFactory;
-
-    public function users(){
-        return $this->belongsToMany('App\Models\User');
+    use SoftDeletes;
+    public function principal(){
+        return $this->belongsTo('App\Models\Role');
     }
 }
